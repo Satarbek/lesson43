@@ -45,10 +45,6 @@ public class Main {
             exchange.sendResponseHeaders(response, length);
 
             try (PrintWriter writer = getWriterFrom(exchange)){
-                String method = exchange.getRequestMethod();
-                URI uri = exchange.getRequestURI();
-                String ctxPath = exchange.getHttpContext().getPath();
-
                 write(writer, "First processing...", "********");
 
                 writeData(writer,exchange);
@@ -67,11 +63,7 @@ public class Main {
             exchange.sendResponseHeaders(response, length);
 
             try (PrintWriter writer = getWriterFrom(exchange)){
-                String method = exchange.getRequestMethod();
-                URI uri = exchange.getRequestURI();
-                String ctxPath = exchange.getHttpContext().getPath();
-
-                write(writer, "Second processing...", "*******");
+               write(writer, "Second processing...", "*******");
 
                 writeData(writer,exchange);
                 writer.flush();
@@ -89,10 +81,6 @@ public class Main {
             exchange.sendResponseHeaders(response, length);
 
             try (PrintWriter writer = getWriterFrom(exchange)){
-                String method = exchange.getRequestMethod();
-                URI uri = exchange.getRequestURI();
-                String ctxPath = exchange.getHttpContext().getPath();
-
                 write(writer, "Third processing...", "*******");
 
                 writeData(writer,exchange);
